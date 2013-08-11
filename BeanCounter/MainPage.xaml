@@ -43,10 +43,10 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Bean Counter" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0" Foreground="#FF745F48"/>
+            <TextBlock Text="bean counter" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0" Foreground="#FF745F48"/>
             <TextBlock Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FF81D878">
-            	<Run Text="bucket "/>
-            	<Run Text="1"/>
+            	<Run Text="food "/>
+            	<Run Text="drink"/>
             </TextBlock>
         </StackPanel>
 
@@ -75,8 +75,8 @@
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
             <shell:ApplicationBarIconButton 
-                IconUri="/Images/appbar.add.rest.png" 
-                Text="add" 
+                IconUri="/Assets/Images/Dark/feature.settings.png" 
+                Text="setup" 
                 x:Name="newTaskAppBarButton" 
                 Click="newTaskAppBarButton_Click"/>
         </shell:ApplicationBar>

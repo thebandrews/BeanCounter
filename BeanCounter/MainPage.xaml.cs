@@ -47,6 +47,11 @@ namespace BeanCounter
 
         }
 
+        private void newTaskAppBarButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()
         //{
