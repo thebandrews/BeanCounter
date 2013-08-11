@@ -22,6 +22,31 @@ namespace BeanCounter
             //BuildLocalizedApplicationBar();
         }
 
+        private void bean_1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void bean_3_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void bean_5_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void bean_10_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void bean_custom_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()
         //{
