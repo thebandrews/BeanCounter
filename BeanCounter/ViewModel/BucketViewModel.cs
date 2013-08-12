@@ -91,6 +91,11 @@ namespace BeanCounter.ViewModel
             bucketDB.SubmitChanges();
         }
 
+        /// <summary>
+        /// Set total number of beans in a bucket.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="count"></param>
         public void UpdateBucket(string name, int count)
         {
             foreach (Bucket bucket in AllBuckets)
@@ -103,6 +108,43 @@ namespace BeanCounter.ViewModel
 
             // Save changes to the database.
             bucketDB.SubmitChanges();
+        }
+
+        /// <summary>
+        /// Remove count beans from bucket
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="count"></param>
+        public void RemoveBeansFromBucket(string name, int count)
+        {
+            foreach (Bucket bucket in AllBuckets)
+            {
+                if (bucket.BucketName == name)
+                {
+                    bucket.BeanCount -= count;
+                }
+            }
+
+            // Save changes to the database.
+            bucketDB.SubmitChanges();
+        }
+
+        /// <summary>
+        /// Return bean count for given bucket
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public int GetBucketBeanCount(string name)
+        {
+            foreach (Bucket bucket in AllBuckets)
+            {
+                if (bucket.BucketName == name)
+                {
+                    return bucket.BeanCount;
+                }
+            }
+
+            return 0;
         }
 
         #region INotifyPropertyChanged Members

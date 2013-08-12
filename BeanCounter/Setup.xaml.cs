@@ -11,9 +11,9 @@ using BeanCounter.Model;
 
 namespace BeanCounter
 {
-    public partial class Page1 : PhoneApplicationPage
+    public partial class Setup : PhoneApplicationPage
     {
-        public Page1()
+        public Setup()
         {
             InitializeComponent();
 
@@ -26,7 +26,7 @@ namespace BeanCounter
             if (beanCountTextBox.Text.Length > 0)
             {
                 // Update bucket item in the ViewModel.
-                App.ViewModel.UpdateBucket("food drink", Convert.ToInt32(beanCountTextBox.Text));
+                App.ViewModel.UpdateBucket("food drink", Convert.ToInt32(beanCountTextBox.Text));                
 
                 // Return to the main page.
                 if (NavigationService.CanGoBack)
