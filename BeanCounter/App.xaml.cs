@@ -6,7 +6,11 @@ using System.Windows.Markup;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+
 using BeanCounter.Resources;
+using BeanCounter.Model;
+using BeanCounter.ViewModel;
+
 
 namespace BeanCounter
 {
@@ -17,6 +21,13 @@ namespace BeanCounter
         /// </summary>
         /// <returns>The root frame of the Phone Application.</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
+
+        // The static ViewModel, to be used across the application.
+        private static BucketViewModel viewModel;
+        public static BucketViewModel ViewModel
+        {
+            get { return viewModel; }
+        }
 
         /// <summary>
         /// Constructor for the Application object.
@@ -54,6 +65,31 @@ namespace BeanCounter
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
+
+            // Specify the local database connection string.
+            string DBConnectionString = "Data Source=isostore:/Buckets.sdf";
+
+            // Create the database if it does not exist.
+            using (BucketDataContext db = new BucketDataContext(DBConnectionString))
+            {
+                if (db.DatabaseExists() == false)
+                {
+                    // Create the local database.
+                    db.CreateDatabase();
+
+                    // Prepopulate the default Food and Drink category.
+                    db.Buckets.InsertOnSubmit(new Bucket { BeanCount = 100, BucketName = "food drink" });                    
+
+                    // Save categories to the database.
+                    db.SubmitChanges();
+                }
+            }
+
+            // Create the ViewModel object.
+            viewModel = new BucketViewModel(DBConnectionString);
+
+            // Query the local database and load observable collections.
+            viewModel.LoadCollectionsFromDatabase();
 
         }
 

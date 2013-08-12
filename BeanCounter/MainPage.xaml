@@ -45,10 +45,9 @@
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="bean counter" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0" Foreground="#FF745F48"/>
             <TextBlock Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FF81D878">
-            	<Run Text="food "/>
-            	<Run Text="drink"/>
+            	<Run Text="food drink"/>
             </TextBlock>
-            <TextBlock HorizontalAlignment="Left" Height="77" TextWrapping="Wrap" Text="remaining beans = X" Width="448" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <TextBlock x:Name="remaining_beans" HorizontalAlignment="Left" Height="77" TextWrapping="Wrap" Text="remaining beans = X" Width="448" VerticalAlignment="Center" Margin="10,0,0,0"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -56,11 +55,11 @@
 
             <ScrollViewer HorizontalAlignment="Left" Height="497" Margin="10,10,0,0" VerticalAlignment="Top" Width="436">
                 <Grid HorizontalAlignment="Left" Height="679" VerticalAlignment="Top" Width="436">
-                    <Button x:Name="bean_1" Content="bean+=1" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="416" FontFamily="Segoe WP SemiLight" Click="bean_1_Click"/>
-                    <Button x:Name="bean_3" Content="bean+=3" HorizontalAlignment="Left" Height="100" Margin="10,115,0,0" VerticalAlignment="Top" Width="416" FontFamily="Segoe WP SemiLight" Click="bean_3_Click"/>
-                    <Button x:Name="bean_5" Content="bean+=5" HorizontalAlignment="Left" Height="100" Margin="10,220,0,0" VerticalAlignment="Top" Width="416" FontFamily="Segoe WP SemiLight" Click="bean_5_Click"/>
-                    <Button x:Name="bean_10" Content="bean+=10" HorizontalAlignment="Left" Height="100" Margin="10,325,0,0" VerticalAlignment="Top" Width="416" FontFamily="Segoe WP SemiLight" Click="bean_10_Click"/>
-                    <Button x:Name="bean_custom" Content="bean+=custom" HorizontalAlignment="Left" Height="100" Margin="10,430,0,0" VerticalAlignment="Top" Width="416" FontFamily="Segoe WP SemiLight"  Click="bean_custom_Click"/>
+                    <Button x:Name="bean_1" Content="one bean" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="416" FontFamily="Segoe WP SemiLight" Click="bean_1_Click"/>
+                    <Button x:Name="bean_3" Content="three beans" HorizontalAlignment="Left" Height="100" Margin="10,115,0,0" VerticalAlignment="Top" Width="416" FontFamily="Segoe WP SemiLight" Click="bean_3_Click"/>
+                    <Button x:Name="bean_5" Content="five beans" HorizontalAlignment="Left" Height="100" Margin="10,220,0,0" VerticalAlignment="Top" Width="416" FontFamily="Segoe WP SemiLight" Click="bean_5_Click"/>
+                    <Button x:Name="bean_10" Content="ten beans" HorizontalAlignment="Left" Height="100" Margin="10,325,0,0" VerticalAlignment="Top" Width="416" FontFamily="Segoe WP SemiLight" Click="bean_10_Click"/>
+                    <Button x:Name="bean_custom" Content="custom beans" HorizontalAlignment="Left" Height="100" Margin="10,430,0,0" VerticalAlignment="Top" Width="416" FontFamily="Segoe WP SemiLight"  Click="bean_custom_Click"/>
                 </Grid>
             </ScrollViewer>
 
@@ -80,8 +79,8 @@
             <shell:ApplicationBarIconButton 
                 IconUri="/Assets/Images/Dark/feature.settings.png" 
                 Text="setup" 
-                x:Name="newTaskAppBarButton" 
-                Click="newTaskAppBarButton_Click"/>
+                x:Name="setupAppBarButton" 
+                Click="setupAppBarButton_Click"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 

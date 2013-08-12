@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using BeanCounter.Resources;
+using BeanCounter.Model;
 
 namespace BeanCounter
 {
@@ -17,6 +18,9 @@ namespace BeanCounter
         public MainPage()
         {
             InitializeComponent();
+
+            // Set the page DataContext property to the ViewModel.
+            this.DataContext = App.ViewModel;
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
@@ -47,9 +51,9 @@ namespace BeanCounter
 
         }
 
-        private void newTaskAppBarButton_Click(object sender, EventArgs e)
+        private void setupAppBarButton_Click(object sender, EventArgs e)
         {
-
+            NavigationService.Navigate(new Uri("/Setup.xaml", UriKind.Relative));
         }
 
         // Sample code for building a localized ApplicationBar

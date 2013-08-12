@@ -13,7 +13,7 @@ namespace BeanCounter.Model
             : base(connectionString)
         { }
 
-        // Specify a table for the to-do items.
+        // Specify a table for the bucket items.
         public Table<Bucket> Buckets;
     }
 
